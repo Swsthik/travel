@@ -1,10 +1,17 @@
 .bookingForm {
   max-width: 600px;
+  width: 90%;
   margin: 0 auto;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.bookingForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .serviceButtons {
@@ -20,7 +27,12 @@
   border-radius: 0.5rem;
   font-weight: bold;
   color: white;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.serviceButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form {
@@ -37,13 +49,23 @@
 
 .formGroup label {
   font-weight: bold;
+  color: #4a5568;
 }
 
 .formGroup select,
 .formGroup input {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.formGroup select:focus,
+.formGroup input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
 .dateInputs {
@@ -58,11 +80,33 @@
   border: none;
   border-radius: 0.5rem;
   font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .searchButton:hover {
   background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .bookingForm {
+    padding: 1.5rem;
+  }
+
+  .serviceButtons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .serviceButton {
+    width: 100%;
+  }
+
+  .dateInputs {
+    flex-direction: column;
+  }
 }
 

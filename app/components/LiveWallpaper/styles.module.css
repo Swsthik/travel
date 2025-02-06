@@ -9,35 +9,47 @@
   z-index: -1;
 }
 
+.sun {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #ffd700;
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+  box-shadow: 0 0 50px #ffd700;
+  animation: pulse 5s infinite alternate;
+}
+
 .cloud1,
 .cloud2,
 .cloud3 {
   position: absolute;
   background: white;
-  border-radius: 50%;
+  border-radius: 50px;
   animation: float 30s infinite linear;
 }
 
 .cloud1 {
-  width: 100px;
+  width: 150px;
   height: 50px;
   top: 20%;
-  left: -100px;
+  left: -150px;
 }
 
 .cloud2 {
-  width: 150px;
-  height: 75px;
+  width: 200px;
+  height: 60px;
   top: 40%;
-  left: -150px;
+  left: -200px;
   animation-delay: -10s;
 }
 
 .cloud3 {
-  width: 80px;
+  width: 120px;
   height: 40px;
   top: 60%;
-  left: -80px;
+  left: -120px;
   animation-delay: -20s;
 }
 
@@ -51,12 +63,30 @@
   animation: fly 20s infinite linear;
 }
 
+.mountain1,
+.mountain2 {
+  position: absolute;
+  bottom: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+}
+
+.mountain1 {
+  left: 0;
+  border-bottom: 200px solid #4a5568;
+}
+
+.mountain2 {
+  right: 0;
+  border-bottom: 300px solid #2d3748;
+}
+
 @keyframes float {
   0% {
-    transform: translateX(-100px);
+    transform: translateX(-100%);
   }
   100% {
-    transform: translateX(calc(100vw + 100px));
+    transform: translateX(100vw);
   }
 }
 
@@ -64,22 +94,68 @@
   0% {
     left: -100px;
     top: 20%;
+    transform: rotate(0deg);
   }
   25% {
     left: 25vw;
     top: 40%;
+    transform: rotate(5deg);
   }
   50% {
     left: 50vw;
     top: 60%;
+    transform: rotate(0deg);
   }
   75% {
     left: 75vw;
     top: 40%;
+    transform: rotate(-5deg);
   }
   100% {
     left: 100vw;
     top: 20%;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .sun {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cloud1,
+  .cloud2,
+  .cloud3 {
+    transform: scale(0.7);
+  }
+
+  .plane {
+    width: 60px;
+    height: 30px;
+  }
+
+  .mountain1,
+  .mountain2 {
+    border-left-width: 100px;
+    border-right-width: 100px;
+  }
+
+  .mountain1 {
+    border-bottom-width: 150px;
+  }
+
+  .mountain2 {
+    border-bottom-width: 200px;
   }
 }
 
